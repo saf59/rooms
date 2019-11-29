@@ -18,7 +18,7 @@
   <FormSettings>
     <Form xsi:type="ItemEdit">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/index.html"/>
+        <SourceLocation DefaultValue="https://192.168.7.30:3000/index.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
