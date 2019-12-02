@@ -2,20 +2,20 @@
     <table>
         <thead>
         <tr>
-            <th v-for="key in columns" v-bind:key="key"
-                @click="sortBy(key)"
-                :class="{ active: sortKey == key }">
-                {{ key | capitalize }}
-                <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+            <th v-for="colKey in columns" :key="colKey"
+                @click="sortBy(colKey)"
+                :class="{ active: sortKey == colKey }">
+                {{ colKey | capitalize }}
+                <span class="arrow" :class="sortOrders[colKey] > 0 ? 'asc' : 'dsc'">
           </span>
             </th>
         </tr>
         </thead>
         <tbody>
-        <tr v-for="entry in filteredHeroes" v-bind:key="entry">
-            <td v-for="key in columns" v-bind:key="key"
+        <tr v-for="entry in filteredRooms" :key="entry">
+            <td v-for="tdKey in columns" :key="tdKey"
                 @click="apply(entry)">
-                {{entry[key]}}
+                {{entry[tdKey]}}
             </td>
         </tr>
         </tbody>
@@ -27,7 +27,7 @@
         name: 'grid',
         template: '#grid-template',
         props: {
-            heroes: Array,
+            rooms: Array,
             columns: Array,
             filterKey: String,
             selectedInfo: String
@@ -43,26 +43,26 @@
             }
         },
         computed: {
-            filteredHeroes: function () {
+            filteredRooms: function () {
                 var sortKey = this.sortKey
                 var filterKey = this.filterKey && this.filterKey.toLowerCase()
                 var order = this.sortOrders[sortKey] || 1
-                var heroes = this.heroes
+                var rooms = this.rooms
                 if (filterKey) {
-                    heroes = heroes.filter(function (row) {
+                    rooms = rooms.filter(function (row) {
                         return Object.keys(row).some(function (key) {
                             return String(row[key]).toLowerCase().indexOf(filterKey) > -1
                         })
                     })
                 }
                 if (sortKey) {
-                    heroes = heroes.slice().sort(function (a, b) {
+                    rooms = rooms.slice().sort(function (a, b) {
                         a = a[sortKey]
                         b = b[sortKey]
                         return (a === b ? 0 : a > b ? 1 : -1) * order
                     })
                 }
-                return heroes
+                return rooms
             }
         },
         filters: {

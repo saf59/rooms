@@ -1,12 +1,12 @@
 <template>
     <div id="app">
-        <img alt="Logo" src="./assets/logo.png" height="50" width="50">
+        <!--<img alt="Logo" src="../public/assets/logo.png" height="50" width="50">-->
         <span class="message">{{selectedInfo}}</span>
         <form id="search">
             Search <input name="query" v-model="searchQuery">
         </form>
         <grid
-                :heroes="gridData"
+                :rooms="gridData"
                 :columns="gridColumns"
                 :filter-key="searchQuery"
                 :selectedInfo="selectedInfo">
@@ -22,7 +22,7 @@
         components: {
             grid
         },
-        el: '#app',
+        //el: '#app',
         data: function () {
             return {
                 searchQuery: '',
