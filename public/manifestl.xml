@@ -6,9 +6,9 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="AI rooms" />
   <Description DefaultValue="Intelligent meeting room selection." />
-  <SupportUrl DefaultValue="https://ispredict.com" />
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+  <SupportUrl DefaultValue="https://ispredict.com" />
   <Hosts>
     <Host Name="Mailbox"/>
   </Hosts>
