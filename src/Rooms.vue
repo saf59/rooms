@@ -1,6 +1,5 @@
 <template>
     <div id="app">
-        <!--<img alt="Logo" src="../public/assets/logo.png" height="50" width="50">-->
         <span class="message">{{selectedInfo}}</span>
         <form id="search">
             Search <input name="query" v-model="searchQuery">
@@ -22,8 +21,7 @@
         components: {
             grid
         },
-        //el: '#app',
-        data: function () {
+        data:  () => {
             return {
                 searchQuery: '',
                 selectedInfo: 'Our service has selected 4 meeting rooms for you.',
@@ -38,14 +36,9 @@
         }
     }
 </script>
+
 <style>
-     img {
-         display: block;
-         margin-left: auto;
-         margin-right: auto;
-     }
     .message {
         display: block;
     }
-
 </style>

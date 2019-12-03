@@ -4,10 +4,9 @@
         <tr>
             <th v-for="colKey in columns" :key="colKey"
                 @click="sortBy(colKey)"
-                :class="{ active: sortKey == colKey }">
+                :class="{ active: sortKey === colKey }">
                 {{ colKey | capitalize }}
-                <span class="arrow" :class="sortOrders[colKey] > 0 ? 'asc' : 'dsc'">
-          </span>
+                <span class="arrow" :class="sortOrders[colKey] > 0 ? 'asc' : 'dsc'"></span>
             </th>
         </tr>
         </thead>
@@ -33,21 +32,22 @@
             selectedInfo: String
         },
         data: function () {
-            var sortOrders = {}
+            var sortOrders = {};
             this.columns.forEach(function (key) {
                 sortOrders[key] = 1
-            })
+            });
+            sortOrders[this.columns[0]] = -1;
             return {
-                sortKey: '',
+                sortKey: this.columns[0],
                 sortOrders: sortOrders
             }
         },
         computed: {
             filteredRooms: function () {
-                var sortKey = this.sortKey
-                var filterKey = this.filterKey && this.filterKey.toLowerCase()
-                var order = this.sortOrders[sortKey] || 1
-                var rooms = this.rooms
+                var sortKey = this.sortKey;
+                var filterKey = this.filterKey && this.filterKey.toLowerCase();
+                var order = this.sortOrders[sortKey] || 1;
+                var rooms = this.rooms;
                 if (filterKey) {
                     rooms = rooms.filter(function (row) {
                         return Object.keys(row).some(function (key) {
@@ -57,9 +57,9 @@
                 }
                 if (sortKey) {
                     rooms = rooms.slice().sort(function (a, b) {
-                        a = a[sortKey]
-                        b = b[sortKey]
-                        return (a === b ? 0 : a > b ? 1 : -1) * order
+                        a = a[sortKey];
+                        b = b[sortKey];
+                        return (a === b ? 0 : a > b ? 1 : -1) * order;
                     })
                 }
                 return rooms
@@ -78,8 +78,8 @@
                 }
             },
             sortBy: function (key) {
-                this.sortKey = key
-                this.sortOrders[key] = this.sortOrders[key] * -1
+                this.sortKey = key;
+                this.sortOrders[key] = this.sortOrders[key] * -1;
             },
             buildInfo: function () {
                 return 'Our service has selected 4 meeting rooms for you.'
@@ -117,7 +117,6 @@
     }
 
     th, td {
-        /*min-width: 120px;*/
         padding: 5px 10px;
         max-width: 105px;
         cursor: pointer;
@@ -138,17 +137,15 @@
         height: 0;
         margin-left: 5px;
         opacity: 0.66;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
     }
 
     .arrow.asc {
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
         border-bottom: 4px solid #fff;
     }
 
     .arrow.dsc {
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
         border-top: 4px solid #fff;
     }
 
