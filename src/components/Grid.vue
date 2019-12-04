@@ -97,14 +97,14 @@
     }
 
     table {
-        border: 2px solid #539ebc;
+        border: 2px solid rgb(0, 120, 212);
         border-radius: 3px;
         background-color: #fff;
         margin-top: 5px;
     }
 
     th {
-        background-color: #429db9;
+        background-color: rgb(0, 120, 212);
         color: rgba(255, 255, 255, 0.66);
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -118,7 +118,7 @@
 
     th, td {
         padding: 5px 10px;
-        max-width: 105px;
+        max-width: 115px;
         cursor: pointer;
     }
 
@@ -136,7 +136,7 @@
         width: 0;
         height: 0;
         margin-left: 5px;
-        opacity: 0.66;
+        opacity: 0.2;
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
     }
