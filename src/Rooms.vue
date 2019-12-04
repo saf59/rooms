@@ -23,7 +23,7 @@
         data:  () => {
             return {
                 searchQuery: '',
-                selectedInfo: '',
+                selectedInfo: 'Please wait! We select the right meeting rooms for you ...',
                 gridColumns: [],
                 gridData: []
             }
