@@ -23,8 +23,8 @@
         data:  () => {
             return {
                 searchQuery: '',
-                selectedInfo: 'Please wait! We select the right meeting rooms for you ...',
-                gridColumns: [],
+                selectedInfo: '',
+                gridColumns: ['rate', 'name', 'capacity'],
                 gridData: []
             }
         },
@@ -33,7 +33,7 @@
                 .get('/goodRooms.json')
                 .then(response => {
                     this.gridData = response.data;
-                    this.gridColumns = Object.keys(this.gridData[0]);
+                    //this.gridColumns = Object.keys(this.gridData[0]);
                     this.selectedInfo = 'Our service has selected '+this.gridData.length+' meeting rooms for you.';
                 });
         }
