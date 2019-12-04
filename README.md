@@ -26,7 +26,7 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-#Actions on https://console.cloud.google.com 
+##Actions on https://console.cloud.google.com 
 ```
 gcloud init
 
@@ -37,17 +37,17 @@ npm install -g @vue/cli
 npm install -g @vue/cli-service-global
 npm install axios --save
 ```
-##In vue.config.js edit if nescessary:
+###In vue.config.js edit if nescessary:
 ```
 const find = 'localhost:3000';
 const replacement = 'rooms-258209.appspot.com';
 ```
-##Change if nescessary
+###Change if nescessary
 ```
 public\goodRooms.json 
 src\manifest.xml
 ```
-##After each update in console:
+###After each update in console:
 ```
 git pull
 npm run build
