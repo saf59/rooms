@@ -1,6 +1,11 @@
 ## Project setup
 ```
+git clone https://github.com/saf59/rooms 
+cd rooms
 npm install
+npm install -g @vue/cli
+npm install -g @vue/cli-service-global
+npm install axios --save
 ```
 
 ### Compiles and hot-reloads for development
@@ -42,7 +47,7 @@ const replacement = 'rooms-258209.appspot.com';
 public\goodRooms.json 
 src\manifest.xml
 ```
-##After each update:
+##After each update in console:
 ```
 git pull
 npm run build
