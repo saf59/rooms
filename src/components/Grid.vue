@@ -11,7 +11,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="entry in filteredRooms" :key="entry">
+        <tr v-for="entry in filteredRooms" :key="entry.name">
             <td v-for="tdKey in columns" :key="tdKey"
                 @click="apply(entry)">
                 {{entry[tdKey]}}
