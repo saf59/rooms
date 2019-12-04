@@ -1,5 +1,3 @@
-# rooms
-
 ## Project setup
 ```
 npm install
@@ -22,3 +20,31 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+#Actions on https://console.cloud.google.com 
+```
+gcloud init
+
+git clone https://github.com/saf59/rooms 
+cd rooms
+npm install
+npm install -g @vue/cli
+npm install -g @vue/cli-service-global
+npm install axios --save
+```
+##In vue.config.js edit if nescessary:
+```
+const find = 'localhost:3000';
+const replacement = 'rooms-258209.appspot.com';
+```
+##Change if nescessary
+```
+public\goodRooms.json 
+src\manifest.xml
+```
+##After each update:
+```
+git pull
+npm run build
+gcloud app deploy
+```
