@@ -1,0 +1,27 @@
+[
+    {
+      "rate": 97,
+      "name": "Library, 2nd floor, Hall 3",
+      "capacity": "up to 20"
+    },
+    {
+      "rate": 63,
+      "name": "Main building, 4th floor, room 5",
+      "capacity": "up to 15"
+    },
+    {
+      "rate": 22,
+      "name": "Laboratory building, penthouse",
+      "capacity": "up to 35"
+    },
+    {
+      "rate": 11,
+      "name": "Lobby, interview room",
+      "capacity": "up to 10"
+    },
+    {
+      "rate": 8,
+      "name": "Main building, 3th floor, room 24",
+      "capacity": "up to 50"
+    }
+  ]
