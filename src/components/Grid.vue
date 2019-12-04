@@ -97,14 +97,14 @@
     }
 
     table {
-        border: 2px solid rgb(0, 120, 212);
+        border: 2px solid #0078D4;
         border-radius: 3px;
         background-color: #fff;
         margin-top: 5px;
     }
 
     th {
-        background-color: rgb(0, 120, 212);
+        background-color: #0078D4;
         color: rgba(255, 255, 255, 0.66);
         -webkit-user-select: none;
         -moz-user-select: none;
