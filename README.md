@@ -1,3 +1,5 @@
+## Prerequisites
+   Outlook 2016 or later on Windows (connected to an Office 365 account) or Outlook on the web
 ## Project setup
 ```
 git clone https://github.com/saf59/rooms 

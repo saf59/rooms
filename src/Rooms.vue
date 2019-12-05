@@ -47,9 +47,7 @@
                 this.currentPage = selectedPage
                 var start = (selectedPage - 1) * this.pageSize
                 var end = start + this.pageSize
-                console.log(selectedPage, start, end)
                 this.gridData = this.allData.slice(start, end);
-                // Your AJAX or other code to display the data for the newly selected currentPage
             }
         },
         mounted() {
