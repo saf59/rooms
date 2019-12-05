@@ -9,8 +9,12 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "bootstrap": "^4.4.1",
+    "bootstrap-vue": "^2.1.0",
     "core-js": "^3.3.2",
-    "vue": "^2.6.10"
+    "node-sass": "^4.13.0",
+    "vue": "^2.6.10",
+    "vue-popperjs": "^2.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",
@@ -19,7 +23,10 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^6.0.1",
-    "replace-in-file-webpack-plugin": "^1.0.6",
+    "glob-all": "^3.1.0",
+    "purgecss-webpack-plugin": "^1.6.0",
+    "purgecss-whitelister": "^2.4.0",
+    "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {

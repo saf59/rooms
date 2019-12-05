@@ -11,7 +11,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="entry in filteredRooms" :key="entry.name">
+        <tr v-for="entry in filteredRooms" :key="entry.name"
+            v-b-tooltip.hover.top.html.v-primary :title="entry.details" variant="outline-success">
             <td v-for="tdKey in columns" :key="tdKey"
                 @click="apply(entry)">
                 {{entry[tdKey]}}
@@ -29,7 +30,8 @@
             rooms: Array,
             columns: Array,
             filterKey: String,
-            selectedInfo: String
+            selectedInfo: String,
+            parent : Object
         },
         data: function () {
             var sortOrders = {};
@@ -78,6 +80,7 @@
                 }
             },
             sortBy: function (key) {
+                this.parent.fetchData(1)
                 this.sortKey = key;
                 this.sortOrders[key] = this.sortOrders[key] * -1;
             },
@@ -99,9 +102,13 @@
     table {
         border: 2px solid #0078D4;
         border-radius: 3px;
-        background-color: #fff;
+        /*background-color: #fff;*/
         margin-top: 5px;
     }
+
+    tr:nth-child(even) {background: #CAE9F5}
+    /*tr:nth-child(even) {background: #d4ebf2}*/
+    tr:nth-child(odd) {background: #FFF}
 
     th {
         background-color: #0078D4;
@@ -113,12 +120,12 @@
     }
 
     td {
-        background-color: #f9f9f9;
+        /*background-color: #f9f9f9;*/
     }
 
     th, td {
         padding: 5px 10px;
-        max-width: 115px;
+        max-width: 150px;
         cursor: pointer;
     }
 
