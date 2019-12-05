@@ -11,8 +11,6 @@ npm install vue bootstrap-vue bootstrap
 npm install sass-loader --save-dev
 npm i --save-dev glob-all purgecss-whitelister
 npm i --save-dev glob-all purgecss-webpack-plugin
-and 
-npm uninstall replace-in-file-webpack-plugin -D
 ```
 
 ### Compiles and hot-reloads for development
