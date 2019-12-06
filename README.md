@@ -1,5 +1,6 @@
 ## Prerequisites
-   Outlook 2016 or later on Windows (connected to an Office 365 account) or Outlook on the web
+   Outlook 2016 or later on Windows (connected to an Office 365 account) or Outlook on the web.
+   The application must work on https, and therefore must be hosted for example on [Google cloud] (https://console.cloud.google.com)
 ## Project setup
 ```
 git clone https://github.com/saf59/rooms 
@@ -8,6 +9,9 @@ npm install
 npm install -g @vue/cli
 npm install -g @vue/cli-service-global
 npm install axios --save
+``` 
+### the rest are only for tooltip styles (~ 2.4M) and should be removed later
+``` 
 npm install vue-popperjs --save
 npm install vue bootstrap-vue bootstrap --save 
 npm install jquery --save
@@ -29,6 +33,10 @@ npm run serve
 ```
 npm run build
 ```
+### Deploy the application
+```
+gcloud app deploy  --stop-previous-version
+```
 
 ### Lints and fixes files
 ```
@@ -48,11 +56,11 @@ public\goodRooms.json
 src\manifest.xml
 ```
 
-## Actions on [Google cloud] (https://console.cloud.google.com) : 
+## Actions on Google cloud: 
 
 ### After each update in console:
 ```
 git pull
 npm run build
-gcloud app deploy
+gcloud app deploy --stop-previous-version
 ```
