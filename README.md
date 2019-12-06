@@ -9,10 +9,10 @@ npm install
 npm install -g @vue/cli
 npm install -g @vue/cli-service-global
 npm install axios --save
+npm install vue-popperjs --save
 ``` 
 ### the rest are only for tooltip styles (~ 2.4M) and should be removed later
 ``` 
-npm install vue-popperjs --save
 npm install vue bootstrap-vue bootstrap --save 
 npm install jquery --save
 npm install sass --save

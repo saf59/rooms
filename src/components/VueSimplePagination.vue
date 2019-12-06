@@ -16,7 +16,7 @@
                     </a><span v-if="pageNull(page)">...</span>
                 </li>
                 <li v-bind:class="getClass('next')">
-                    <a v-on:click="setCurrentPage(Math.min(pageCount, currentPage + 1))"
+                    <a v-on:click="setCurrentPage(Math.min(pageCount, Math.max(pageCount,currentPage + 1)))"
                        aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
@@ -103,13 +103,13 @@
             },
 
             getClass(pageNumber) {
-                if (pageNumber == this.currentPage) {
+                if (pageNumber === this.currentPage) {
                     return 'active';
                 } else if (pageNumber == null) {
                     return 'disabled';
-                } else if (pageNumber == 'previous' && this.currentPage == 1) {
+                } else if (pageNumber === 'previous' && this.currentPage === 1) {
                     return 'disabled';
-                } else if (pageNumber == 'next' && this.currentPage == this.pageCount) {
+                } else if (pageNumber === 'next' && this.currentPage === this.pageCount) {
                     return 'disabled';
                 } else {
                     return 'clickable';
@@ -121,7 +121,7 @@
             },
 
             setCurrentPage(newPage) {
-                if (this.currentPage != newPage) {
+                if (this.currentPage !== newPage) {
                     this.$emit('page-changed', newPage);
                     this.buildPageList(newPage);
                 }
@@ -140,6 +140,8 @@
         padding: 0 2px;
         border: 1px solid ;
         border-radius: 3px;
+        width: fit-content;
+        display: inline-block;
     }
 
     li.active {

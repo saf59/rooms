@@ -2,7 +2,7 @@
     <div id="app">
         <span class="message">{{selectedInfo}}</span>
         <form id="search">
-            Search <input name="query" v-model="searchQuery">
+            Search <input name="query" v-model="searchQuery" aria-label="Search">
         </form>
         <grid
                 :rooms="gridData"
@@ -43,9 +43,9 @@
         },
         methods: {
             fetchData(selectedPage) {
-                this.currentPage = selectedPage
-                var start = (selectedPage - 1) * this.pageSize
-                var end = start + this.pageSize
+                this.currentPage = selectedPage;
+                let start = (selectedPage - 1) * this.pageSize;
+                let end = start + this.pageSize;
                 this.gridData = this.allData.slice(start, end);
             }
         },
@@ -55,8 +55,8 @@
                 .then(response => {
                     this.allData = response.data;
                     this.selectedInfo = 'Our service has selected ' + this.allData.length + ' meeting rooms for you.';
-                    this.pageCount = this.allData.length / this.pageSize + 1
-                    this.currentPage = 1
+                    this.pageCount = Math.trunc(this.allData.length / this.pageSize + 1);
+                    this.currentPage = 1;
                     this.fetchData(1)
                 });
         }

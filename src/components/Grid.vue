@@ -83,9 +83,6 @@
                 this.parent.fetchData(1);
                 this.sortKey = key;
                 this.sortOrders[key] = this.sortOrders[key] * -1;
-            },
-            buildInfo: function () {
-                return 'Our service has selected 4 meeting rooms for you.'
             }
         }
     }
@@ -158,5 +155,9 @@
 
     form {
         margin-top: 4px;
+    }
+    .tooltip.b-tooltip {
+       display: block;
+        opacity: 0.9;
     }
 </style>

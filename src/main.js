@@ -3,7 +3,7 @@ import App from './Rooms.vue'
 import BootstrapVue from 'bootstrap-vue'
 
 Vue.config.productionTip = false;
-Vue.use(BootstrapVue)
+Vue.use(BootstrapVue);
 function init() {
     new Vue({
         render: h => h(App)
