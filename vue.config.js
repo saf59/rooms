@@ -1,7 +1,9 @@
-﻿const whitelister = require('purgecss-whitelister');
+﻿/*
+const whitelister = require('purgecss-whitelister');
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const glob = require('glob-all')
 const { resolve } = require('path');
+*/
 module.exports = {
     devServer: {
         port: 3000,
@@ -11,6 +13,7 @@ module.exports = {
             errors: true
         }
     },
+/*
     configureWebpack: {
         plugins: [
             // Remove unused CSS using PurgeCSS. See https://github.com/FullHuman/purgecss
@@ -19,7 +22,7 @@ module.exports = {
                 keyframes: false, // https://goo.gl/bACbDW
                 styleExtensions: ['.css'],
                 paths: glob.sync([
-                    resolve(resolve(), 'src/**/*.js'),
+                    resolve(resolve(), 'src/!**!/!*.js'),
                     resolve(resolve(), 'src/index.ejs')
                 ]),
 
@@ -39,6 +42,7 @@ module.exports = {
             })
         ]
     },
+*/
     chainWebpack: config => {
         config.plugin('copy').tap(args => {
             args[0].push({ // to add rule
