@@ -9,9 +9,13 @@ npm install -g @vue/cli
 npm install -g @vue/cli-service-global
 npm install axios --save
 npm install vue-popperjs --save
-npm install vue bootstrap-vue bootstrap
-npm install sass-loader --save-dev
-npm install node-sass --save-dev
+npm install vue bootstrap-vue bootstrap --save 
+npm install jquery --save
+npm install sass --save
+npm install fibers --save
+npm install sass-loader --save
+npm install node-sass --save
+
 npm i --save-dev glob-all purgecss-whitelister
 npm i --save-dev glob-all purgecss-webpack-plugin
 ```

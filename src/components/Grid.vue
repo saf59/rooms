@@ -12,7 +12,7 @@
         </thead>
         <tbody>
         <tr v-for="entry in filteredRooms" :key="entry.name"
-            v-b-tooltip.hover.top.html.v-primary :title="entry.details" variant="outline-success">
+            v-b-tooltip.hover.top.html.v-primary :title="entry.details">
             <td v-for="tdKey in columns" :key="tdKey"
                 @click="apply(entry)">
                 {{entry[tdKey]}}
@@ -80,7 +80,7 @@
                 }
             },
             sortBy: function (key) {
-                this.parent.fetchData(1)
+                this.parent.fetchData(1);
                 this.sortKey = key;
                 this.sortOrders[key] = this.sortOrders[key] * -1;
             },
