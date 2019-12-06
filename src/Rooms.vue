@@ -43,7 +43,6 @@
         },
         methods: {
             fetchData(selectedPage) {
-
                 this.currentPage = selectedPage
                 var start = (selectedPage - 1) * this.pageSize
                 var end = start + this.pageSize
@@ -55,7 +54,6 @@
                 .get('/goodRooms.json')
                 .then(response => {
                     this.allData = response.data;
-                    //this.gridColumns = Object.keys(this.gridData[0]);
                     this.selectedInfo = 'Our service has selected ' + this.allData.length + ' meeting rooms for you.';
                     this.pageCount = this.allData.length / this.pageSize + 1
                     this.currentPage = 1
