@@ -84,7 +84,6 @@
                 }
             },
             sortBy: function (key) {
-                this.parent.fetchData(1);
                 this.sortKey = key;
                 this.sortOrders[key] = this.sortOrders[key] * -1;
             },
