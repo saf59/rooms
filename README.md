@@ -63,4 +63,12 @@ src\manifest.xml
 git pull
 npm run build
 gcloud app deploy --stop-previous-version
+```                   
+#### or if you wont to overwrite all:
+```
+git reset --hard HEAD
+gcloud config set project rooms-258209
+git pull
+npm run build
+gcloud app deploy --stop-previous-version
 ```

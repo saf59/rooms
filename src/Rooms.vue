@@ -4,60 +4,37 @@
         <form id="search">
             Search <input name="query" v-model="searchQuery" aria-label="Search">
         </form>
-        <grid
-                :rooms="gridData"
-                :columns="gridColumns"
-                :filter-key="searchQuery"
-                :selectedInfo="selectedInfo"
-                :parent="this">
+        <grid :rooms="externalData"
+              :columns="gridColumns"
+              :filter-key="searchQuery"
+              :selected-info="selectedInfo"
+              :page-size=5>
         </grid>
-        <vue_simple_pagination v-if="pageCount > 1"
-                               v-on:page-changed="fetchData"
-                               v-bind:page-count="pageCount"
-                               v-bind:current-page="currentPage">
-        </vue_simple_pagination>
     </div>
 </template>
 
 <script>
     import grid from './components/Grid.vue'
-    import vue_simple_pagination from './components/VueSimplePagination.vue'
     import axios from 'axios';
 
     export default {
         components: {
-            grid,
-            vue_simple_pagination
+            grid
         },
         data: () => {
             return {
                 searchQuery: '',
                 selectedInfo: '',
                 gridColumns: ['rate', 'name', 'capacity'],
-                gridData: [],
-                allData: [],
-                pageCount: 0,
-                currentPage: 1,
-                pageSize: 5
-            }
-        },
-        methods: {
-            fetchData(selectedPage) {
-                this.currentPage = selectedPage;
-                let start = (selectedPage - 1) * this.pageSize;
-                let end = start + this.pageSize;
-                this.gridData = this.allData.slice(start, end);
+                externalData: []
             }
         },
         mounted() {
             axios
                 .get('/goodRooms.json')
                 .then(response => {
-                    this.allData = response.data;
-                    this.selectedInfo = 'Our service has selected ' + this.allData.length + ' meeting rooms for you.';
-                    this.pageCount = Math.trunc(this.allData.length / this.pageSize + 1);
-                    this.currentPage = 1;
-                    this.fetchData(1)
+                    this.externalData = response.data;
+                    this.selectedInfo = 'Our service has selected ' + this.externalData.length + ' meeting rooms for you.';
                 });
         }
     }
